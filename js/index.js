@@ -81,7 +81,8 @@ function login() {
     ) {
       localStorage.setItem("log", signUpArray[i].name);
       window.location.href = "/welcome.html";
-
+    //   let userName=localStorage.getItem("log")
+    //   document.getElementById('welcomeUser').innerHTML=`Welcome ${userName}`
       found = true;
       break;
     }
@@ -92,12 +93,20 @@ function login() {
     ).innerHTML = `<span class="text-danger m-3">incorrect email or password</span>`;
   }
 }
-window.addEventListener("DOMContentLoaded", function () {
+window.addEventListener("DOMContentLoaded", () => {
   let userName = localStorage.getItem("log");
-  document.getElementById("welcomeUser").innerHTML = `Welcome ${userName} `;
-});
+  let welcomeUser = document.getElementById("welcomeUser");
 
-function logout() {
-  localStorage.removeItem("log");
-  window.location.href = "/index.html";
+  if (welcomeUser) {
+    if (userName) {
+      welcomeUser.innerHTML = `Welcome ${userName} `;
+    } else {
+     
+      window.location.href = "/index.html";
+    }
+  }
+});
+function logout(){
+    localStorage.removeItem('log')
+    window.location.href = "/index.html"
 }
