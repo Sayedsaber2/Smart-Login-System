@@ -94,7 +94,7 @@ function login() {
   }
 }
 window.addEventListener("DOMContentLoaded", () => {
-  let userName = localStorage.getItem("log");
+    let userName = localStorage.getItem("log");
   let welcomeUser = document.getElementById("welcomeUser");
 
   if (welcomeUser) {
