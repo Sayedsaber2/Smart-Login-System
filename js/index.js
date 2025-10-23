@@ -80,7 +80,7 @@ function login() {
       signUpArray[i].password == signInPassword.value
     ) {
       localStorage.setItem("log", signUpArray[i].name);
-      window.location.href = "../welcome.html";
+      window.location.href = "welcome.html";
     //   let userName=localStorage.getItem("log")
     //   document.getElementById('welcomeUser').innerHTML=`Welcome ${userName}`
       found = true;
@@ -102,11 +102,11 @@ window.addEventListener("DOMContentLoaded", () => {
       welcomeUser.innerHTML = `Welcome ${userName} `;
     } else {
      
-      window.location.href = "../index.html";
+      window.location.href = "index.html";
     }
   }
 });
 function logout(){
     localStorage.removeItem('log')
-    window.location.href = "../index.html"
+    window.location.href = "index.html"
 }
